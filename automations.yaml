@@ -95,7 +95,7 @@
 #    data:
 #     message: "A furdoben 20 foknal melegebb van"
 
-#Teszt
+#Test
 # - alias: Futes furdo be
 #   initial_state: False
 #   hide_entity: False
