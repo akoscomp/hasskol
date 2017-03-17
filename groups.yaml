@@ -1,0 +1,47 @@
+###VIEWS
+ csalad_view:
+  view: yes
+  name: Család
+  entities:
+   - device_tracker.akos_bullhead
+   - device_tracker.marti_hwaleh
+ szobak_view:
+  view: yes
+  entities:
+   - group.nappali
+   - group.halo
+   - group.gyerek
+   - group.furdo
+   - group.konyha
+###GROUPS
+ halo:
+  name: Haloszoba
+  entities:
+   - sensor.halo
+   - sensor.halo_1
+   - sensor.halo_2
+ gyerek:
+  name: Gyerekszoba
+  entities:
+   - sensor.gyerekek
+   - sensor.gyerekek_1
+   - sensor.gyerekek_2
+ nappali:
+  name: Nappali
+  entities:
+   - switch.neon
+   - sensor.nappali
+   - sensor.nappali_1
+   - sensor.nappali_2
+ furdo:
+  name: Fürdőszoba
+  entities:
+   - sensor.furdo
+   - sensor.furdo_1
+   - sensor.furdo_2
+ konyha:
+  name: Konyha
+  entities:
+   - sensor.nappali
+   - sensor.konyha_1
+   - sensor.konyha_2

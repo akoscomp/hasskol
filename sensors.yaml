@@ -1,0 +1,19 @@
+#Weather predicton
+ - platform: yr
+#Temp sensors
+ - platform: onewire
+   names:
+    28-0000075b1cff: "Halo"
+    28-0000062713ab: "Gyerekek"
+    28-0000075970a0: "Nappali"
+    28-0115617fc7ff: "Furdo"
+    28-000006280adb: "Furdo 1"
+    28-000006273d7d: "Furdo 2"
+    28-000006280096: "Nappali 1"
+    28-031561b145ff: "Nappali 2"
+    28-00000626da1e: "Gyerekek 1"
+    28-00000625b6eb: "Gyerekek 2"
+    28-0000062767e4: "Halo 1"
+    28-00000627a63a: "Halo 2"
+    28-0115618103ff: "Konyha 1"
+    28-0000062825a8: "Konyha 2"

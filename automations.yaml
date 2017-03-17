@@ -1,0 +1,120 @@
+#Kazant bekapcsolja ha bekapcsol egy futeskor
+ - alias: Kazan bekapcsolo
+   initial_state: on
+   hide_entity: False
+   trigger:
+    platform: state
+    entity_id: switch.furdo, switch.halo, switch.nappali, switch.gyerekek, switch.konyha
+    to: 'on'
+   action:
+    service: switch.turn_on
+    entity_id: switch.kazan
+#Kikapcslja a kazant ha minden futeskor bezar
+ - alias: Kazan kikapcsolo
+   initial_state: on
+   trigger:
+    platform: state
+    entity_id: switch.furdo, switch.halo, switch.nappali, switch.gyerekek, switch.konyha
+    to: 'off'
+   condition:
+    condition: and
+    conditions:
+     - condition: state
+       entity_id: 'switch.furdo'
+       state: 'off'
+     - condition: state
+       entity_id: 'switch.halo'
+       state: 'off'
+     - condition: state
+       entity_id: 'switch.nappali'
+       state: 'off'
+     - condition: state
+       entity_id: 'switch.gyerekek'
+       state: 'off'
+     - condition: state
+       entity_id: 'switch.konyha'
+       state: 'off'
+   action:
+    service: switch.turn_off
+    entity_id: switch.kazan
+ # - alias: Kazant kikapcslja ha tul meleg a padlo
+   # trigger:
+    # platform: numeric_state
+    # entity_id: sensor.furdo_1, sensor.halo_1, sensor.nappali_1, sensor.gyerekek_1, sensor.konyha_1
+    # above: '24'
+   # action:
+    # service: switch.turn_off
+    # entity_id: switch.kazan
+#NEON
+ # - alias: Turn on neon
+   # trigger:
+    # - platform: state
+      # entity_id: switch.neon
+      # state: 'off'
+  # condition:
+    # - condition: time
+      # after: '08:00:00'
+      # before: '20:00:00'
+  # action:
+    # service: switch.turn_on
+    # entity_id: switch.Neon
+#Bekapcsolja a neton reggel
+ - alias: Turn on neon
+   initial_state: True
+   hide_entity: False
+   trigger:
+#    platform: sun
+#    event: sunrise
+    - platform: time
+      after: '8:00'
+   action:
+    service: switch.turn_on
+    entity_id:
+     - switch.Neon
+#Kikapcsolja a neon este
+ - alias: Turn off neon
+   initial_state: True
+   hide_entity: False
+   trigger:
+#    platform: sun
+#    event: sunset
+    - platform: time
+      after: '21:12'
+   action:
+    service: switch.turn_off
+    entity_id:
+     - switch.Neon
+
+# - alias: Check sensor value and show notification
+#   trigger:
+#    platform: numeric_state
+#    entity_id: sensor.furdo
+#    above: 20
+#   action:
+#    service: persistent_notification.create
+#    data:
+#     message: "A furdoben 20 foknal melegebb van"
+
+#Teszt
+# - alias: Futes furdo be
+#   initial_state: False
+#   hide_entity: False
+#   trigger:
+#    platform: numeric_state
+#    entity_id: sensor.furdo
+#    below: 22
+#   action:
+#    service: switch.turn_on
+#    entity_id:
+#     - switch.Furdo
+# - alias: Futes furdo ki
+#   initial_state: False
+#   hide_entity: False
+#   trigger:
+#    platform: numeric_state
+#    entity_id: sensor.furdo
+#    above: 22.5
+#   action:
+#    service: switch.turn_off
+#    entity_id:
+#     - switch.Furdo

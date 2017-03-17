@@ -1,0 +1,67 @@
+#Haloszoba
+- platform: generic_thermostat
+  name: Halo
+  heater: switch.halo
+  target_sensor: sensor.halo
+  min_temp: 17
+  max_temp: 25
+  target_temp: 21
+  tolerance: 0.3
+  min_cycle_duration:
+    minutes: 5
+  condition:
+    condition: and
+    conditions:
+     - condition: numeric_state
+       entity_id: 'sensor.halo_1'
+       below: '23'
+     - condition: numeric_state
+       entity_id: 'sensor.halo_2'
+       below: '23'
+#Gyerekszoba
+- platform: generic_thermostat
+  name: Gyerekszoba
+  heater: switch.gyerekek
+  target_sensor: sensor.gyerekek
+  min_temp: 17
+  max_temp: 25
+  target_temp: 21
+  tolerance: 0.3
+  min_cycle_duration:
+    minutes: 5
+#Furdoszoba
+- platform: generic_thermostat
+  name: Furdoszoba
+  heater: switch.furdo
+  target_sensor: sensor.furdo
+  min_temp: 17
+  max_temp: 25
+  target_temp: 21
+  tolerance: 0.3
+  min_cycle_duration:
+    minutes: 5
+#Konyha
+- platform: generic_thermostat
+  name: Konyha
+  heater: switch.konyha
+  target_sensor: sensor.nappali
+  min_temp: 17
+  max_temp: 25
+  target_temp: 21
+  tolerance: 0.3
+  min_cycle_duration:
+    minutes: 5
+#Nappali
+- platform: generic_thermostat
+  name: Nappali
+  heater: switch.nappali
+  target_sensor: sensor.nappali
+  min_temp: 17
+  max_temp: 25
+  target_temp: 21
+  tolerance: 0.3
+  min_cycle_duration:
+    minutes: 5
+
+#Docs
+#https://home-assistant.io/components/climate.generic_thermostat/
