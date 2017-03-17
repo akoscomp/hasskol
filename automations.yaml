@@ -1,4 +1,4 @@
-#Kazant bekapcsolja ha bekapcsol egy futeskor
+#START boiler when a heat circuit was started
  - alias: Kazan bekapcsolo
    initial_state: on
    hide_entity: False

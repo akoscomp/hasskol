@@ -66,6 +66,7 @@ switch:
       18: Konyha
       27: Nappali
       22: Halo
+      23: Test
       24: Gyerekek
       25: Furdo
     invert_logic: true
