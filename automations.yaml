@@ -9,7 +9,7 @@
    action:
     service: switch.turn_on
     entity_id: switch.kazan
-#Kikapcslja a kazant ha minden futeskor bezar
+#STOP boiler when all heat circutis stoped
  - alias: Kazan kikapcsolo
    initial_state: on
    trigger:
