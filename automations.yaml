@@ -20,20 +20,25 @@
     condition: and
     conditions:
      - condition: state
-       entity_id: 'switch.furdo'
-       state: 'off'
-     - condition: state
-       entity_id: 'switch.halo'
-       state: 'off'
-     - condition: state
-       entity_id: 'switch.nappali'
-       state: 'off'
-     - condition: state
-       entity_id: 'switch.gyerekek'
-       state: 'off'
-     - condition: state
-       entity_id: 'switch.konyha'
-       state: 'off'
+       entity_id: 'switch.kazan'
+       state: 'on'
+       condition: and
+       conditions:
+       - condition: state
+         entity_id: 'switch.furdo'
+         state: 'off'
+       - condition: state
+         entity_id: 'switch.halo'
+         state: 'off'
+       - condition: state
+         entity_id: 'switch.nappali'
+         state: 'off'
+       - condition: state
+         entity_id: 'switch.gyerekek'
+         state: 'off'
+       - condition: state
+         entity_id: 'switch.konyha'
+         state: 'off'
    action:
     service: switch.turn_off
     entity_id: switch.kazan

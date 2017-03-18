@@ -16,6 +16,14 @@ homeassistant:
 # Show links to resources in log and frontend
 #introduction:
 
+logger:
+  default: critical
+#  logs:
+#    homeassistant.components: info
+#    homeassistant.components.rfxtrx: debug
+#    homeassistant.components.device_tracker: critical
+#    homeassistant.components.camera: critical
+
 # Enables the frontend
 frontend:
 
@@ -57,6 +65,8 @@ automation: !include automations.yaml
 sensor: !include sensors.yaml
 
 climate: !include climates.yaml
+
+camera: !include cameras.yaml
 
 switch:
   - platform: rpi_gpio
