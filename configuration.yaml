@@ -17,7 +17,7 @@ homeassistant:
 #introduction:
 
 logger:
-  default: critical
+  default: warning
 #  logs:
 #    homeassistant.components: info
 #    homeassistant.components.rfxtrx: debug
@@ -30,8 +30,9 @@ frontend:
 # Enables configuration UI
 config:
 
-http: 
+http:
   api_password: !secret api_password
+#  server_host: 127.0.0.1
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_key
 
@@ -80,6 +81,15 @@ switch:
       24: Gyerekek
       25: Furdo
     invert_logic: true
+  - platform: wake_on_lan
+    name: "kolgep"
+    mac_address: "74:D4:35:0A:6C:F1"
+
+input_boolean:
+  notify_home:
+    name: Fűtésrednszer kapcsolója
+    initial: off
+    icon: mdi:fire
 
 zone: 
   name: Home
