@@ -71,7 +71,7 @@
 #    platform: sun
 #    event: sunrise
     - platform: time
-      after: '7:53'
+      after: '7:45'
    action:
     service: switch.turn_on
     entity_id:
@@ -84,7 +84,7 @@
 #    platform: sun
 #    event: sunset
     - platform: time
-      after: '19:30'
+      after: '20:00'
    action:
     service: switch.turn_off
     entity_id:
