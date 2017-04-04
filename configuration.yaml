@@ -35,6 +35,8 @@ http:
 #  server_host: 127.0.0.1
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_key
+  ip_ban_enabled: True
+  login_attempts_threshold: 5
 
 # Checks for available updates
 updater:
